@@ -1,0 +1,49 @@
+﻿@model ScheduleApp.User
+
+<h1>User Details</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <d1>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+    </d1>
+</div>
+<div>
+    <ul>
+        @if (ViewBag.CurrentUser.Role.UserPermissions.Edit) {
+            <li>
+                @Html.ActionLink("Edit", "Edit")
+            </li>
+        }
+        @if (ViewBag.CurrentUser.Role.UserPermissions.View) { 
+            <li>
+                <a asp-action="Index">Back to List</a>
+            </li>
+        }
+    </ul>
+</div>

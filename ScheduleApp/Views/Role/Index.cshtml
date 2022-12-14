@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ScheduleApp.Role>
+
+<h1>Role Index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model) {
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <div>
+                    <span>IsAdmin</span>
+                    @Html.DisplayFor(modelItem => item.IsAdmin)
+                </div>
+                <div>
+                    <span>EditProfile</span>
+                    @Html.DisplayFor(modelItem => item.CanEditProfile)
+                </div>
+            </td>
+            <td>
+                <div>
+                    <span>UsersPermissions</span>
+                    @Html.DisplayFor(modelItem => item.UsersPermissions)
+                </div>
+                <div>
+                    <span>Roles</span>
+                    @Html.DisplayFor(modelItem => item.Roles)
+                </div>
+                <div>
+                    <span>Rooms</span>
+                    @Html.DisplayFor(modelItem => item.Rooms)
+                </div>
+                <div>
+                    <span>Classes</span>
+                    @Html.DisplayFor(modelItem => item.Classes)
+                </div>
+            </td>
+            }
+    </tbody>
+</table>

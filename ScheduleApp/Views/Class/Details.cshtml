@@ -1,0 +1,59 @@
+﻿@model ScheduleApp.Class
+
+<h1>Details</h1>
+
+<div>
+    <h4>Class</h4>
+    <hr />
+    <d1>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayNameFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RoomNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BuildingNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProfName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+    </d1>
+</div>
+<div>
+    <ul>
+        <li>
+            <a asp-action="Index" >Back to List</a>
+        </li>
+    </ul>
+</div>

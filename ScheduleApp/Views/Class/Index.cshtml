@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ScheduleApp.Class>
+
+<h1>Class Index</h1>
+
+<p>
+    <a class="action-button" asp-action="Create">Create New</a>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuildingNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Class item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        @Html.ActionLink("Edit","Edit")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Details","Details")
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

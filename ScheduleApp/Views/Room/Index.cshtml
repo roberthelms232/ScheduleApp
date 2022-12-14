@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ScheduleApp.Room>
+
+<h1>Room Index</h1>
+
+<p>
+    <a class="action-button" asp-action="Create">Create New</a>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuildingNum)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Room item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BuildingNum)
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                @Html.ActionLink("Edit","Edit")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Details","Details")
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>

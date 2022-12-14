@@ -1,0 +1,30 @@
+﻿@model User
+
+<div>
+
+    <div>
+        <div>
+            <h1>ScheduleApp</h1>
+        </div>
+        <div>
+            <h2>Login</h2>
+        </div>
+        <div>
+            <form asp-action="Login">
+                <div class="form-field">
+                    <label asp-for="Email" class="label"></label>
+                    <input asp-for="Email" class="text-field" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="form-field">
+                    <label asp-for="Password" class="label"></label>
+                    <input asp-for="Password" class="text-field" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="submit-field">
+                    <input type="submit" value="Login" class="submit-button" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

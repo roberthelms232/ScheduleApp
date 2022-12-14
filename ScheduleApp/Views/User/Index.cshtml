@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ScheduleApp.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>User Index</h1>
+
+<p>
+    <a class="action-button" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleID)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @* For Populating the table with information from the database *@
+        @foreach (User item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <ul>
+                        @if (ViewBag.CurrentUser.Role.UsersPermissions.Edit) {
+                            <li>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                            </li>
+                        }
+                        @if (ViewBag.CurrentUser.Role.UsersPermissions.View) {
+                            <li>
+                                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                            </li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
