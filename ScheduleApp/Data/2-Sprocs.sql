@@ -65,7 +65,7 @@ GO
 GRANT EXECUTE ON dbo.sproc_UserGet TO db_reader
 GO
 
-CREATE PROCEDURE DBO.sproc_UsersGetAll
+CREATE PROCEDURE dbo.sproc_UsersGetAll
 AS
 BEGIN
 	SET NOCOUNT ON;
@@ -74,7 +74,19 @@ BEGIN
 END
 GO
 
-GRANT EXECUTE ON dbo.sproc_UserGetAll TO db_reader
+GRANT EXECUTE ON dbo.sproc_UsersGetAll TO db_reader
+GO
+
+CREATE PROCEDURE dbo.sprocUserGetByEmail
+@Email nvarchar(191)
+AS
+BEGIN
+     SELECT * FROM Users
+          WHERE Email = @Email
+END
+GO
+
+GRANT EXECUTE ON dbo.sprocUserGetByEmail TO db_reader
 GO
 
 --
@@ -187,7 +199,7 @@ GRANT EXECUTE ON dbo.sproc_RoomUpdate TO db_writer
 GO
 
 CREATE PROCEDURE dbo.sproc_RoomGet
-@RommNum int OUTPUT
+@RoomNum int OUTPUT
 AS
 BEGIN
 	SET NOCOUNT ON;
